@@ -7,14 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace WindowsFormsApplication2
 {
     public partial class Form1 : Form
     {
+      
+
         public Form1()
         {
             InitializeComponent();
+            ovalShape1.Visible = false;
+            ovalShape2.Visible = false;
+            ovalShape3.Visible = false;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -31,18 +37,102 @@ namespace WindowsFormsApplication2
             button1.Visible = false;
             button2.Visible = false;
             pictureBox1.Visible = false;
+            MoveCursor();
+            generateTestCase();
 
             
-            Circle1();
+        }
+        private void MoveCursor()
+        {
+            Cursor.Position = new Point(Screen.PrimaryScreen.Bounds.Width / 2,
+                                        Screen.PrimaryScreen.Bounds.Height / 2);
+            timer1.Start();
+        }​
+        private void testGenerator()
+        {
+
+         int[] testArray = new int[12];
+         
+
+
+         }
+
+        private void ovalShape2_Click(object sender, EventArgs e)
+        {
+            timer1.Stop();
+        }
+
+        private void ovalShape1_Click(object sender, EventArgs e)
+        {
+            timer1.Stop();
+            ovalShape1.Visible = false;
+        }
+        private void ovalShape3_Click(object sender, EventArgs e){
+            ovalShape3.Visible = false;
+            timer1.Stop();
+            //generate_next_test
+        }
+        private void ovalShape4_Click(object sender, EventArgs e)
+        {
+            ovalShape4.Visible = false;
+            timer1.Stop();
+        }
+        private void ovalShape5_Click(object sender, EventArgs e)
+        {
+            ovalShape5.Visible = false;
+            timer1.Stop();
+        }
+        private void ovalShape6_Click(object sender, EventArgs e)
+        {
+            ovalShape6.Visible = false;
+            timer1.Stop();
+        }
+        private void ovalShape7_Click(object sender, EventArgs e)
+        {
+            ovalShape7.Visible = false;
+            timer1.Stop();
+        }
+        private void ovalShape8_Click(object sender, EventArgs e)
+        {
+            ovalShape8.Visible = false;
+            timer1.Stop();
+        }
+        private void ovalShape9_Click(object sender, EventArgs e)
+        {
+            ovalShape9.Visible = false;
+            timer1.Stop();
+
+        }
+        private void ovalShape10_Click(object sender, EventArgs e)
+        {
+            ovalShape10.Visible = false;
+            timer1.Stop();
+        }
+        private void ovalShape11_Click(object sender, EventArgs e)
+        {
+            ovalShape11.Visible = false;
+            timer1.Stop();
+        }
+        private void ovalShape12_Click(object sender, EventArgs e)
+        {
+            ovalShape12.Visible = false;
+            timer1.Stop();
+        }
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            
+            ListViewItem lv = new ListViewItem(Cursor.Position.X.ToString());
+            lv.SubItems.Add(Cursor.Position.Y.ToString());
+            
             
         }
-        private void Circle1()
-        {
-        System.Drawing.SolidBrush myBrush = new System.Drawing.SolidBrush(System.Drawing.Color.Red);
-        System.Drawing.Graphics formGraphics = this.CreateGraphics();
-        formGraphics.FillEllipse(myBrush, new Rectangle(100,250,30,30));
-        myBrush.Dispose();
-        formGraphics.Dispose();
+
+        private void generateTestCase(){
+             ovalShape1.Visible = true;
+            
+
         }
+
+       }
 }
-}
+
